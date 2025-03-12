@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://rlwwm0cqpyv7"]
+
+[ext_resource type="Script" path="res://escena_final_5.gd" id="1_tqypf"]
+[ext_resource type="Texture2D" uid="uid://dxy2mpg0m7p0g" path="res://Imagenes/Game-over-fondo.png" id="2_hughv"]
+[ext_resource type="AudioStream" uid="uid://c5qbics43sc87" path="res://Sonidos/ROBOT CHICKEN END THEME.mp3" id="3_1ypfx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqtr4"]
+bg_color = Color(0, 0.564706, 0.0588235, 1)
+
+[node name="Escena final 5" type="CanvasLayer"]
+script = ExtResource("1_tqypf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 652.0
+texture = ExtResource("2_hughv")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.5
+offset_top = -11.5
+offset_right = 164.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "*Batalla épica que me daba flojera dibijar*"
+
+[node name="Siguiente" type="Button" parent="."]
+offset_left = 940.0
+offset_top = 551.0
+offset_right = 1121.0
+offset_bottom = 611.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fqtr4")
+text = "Siguiente"
+
+[node name="RobotChickenEndTheme" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(475, 186)
+stream = ExtResource("3_1ypfx")
+autoplay = true
+
+[connection signal="pressed" from="Siguiente" to="." method="_on_siguiente_pressed"]
