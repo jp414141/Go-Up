@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://yd84aoakts0r"]
+
+[ext_resource type="Texture2D" uid="uid://cgq3gofuo31k4" path="res://Imagenes/Foto 5.png" id="1_e5fo3"]
+[ext_resource type="Script" path="res://Scripts/volver.gd" id="2_pcu2j"]
+[ext_resource type="AudioStream" uid="uid://c5qbics43sc87" path="res://Sonidos/ROBOT CHICKEN END THEME.mp3" id="3_yawv5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7x8b"]
+bg_color = Color(0, 0.564706, 0.0588235, 1)
+
+[node name="Escena final final" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 648.0
+texture = ExtResource("1_e5fo3")
+
+[node name="Volver" type="Button" parent="."]
+offset_left = 940.0
+offset_top = 551.0
+offset_right = 1121.0
+offset_bottom = 611.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_a7x8b")
+text = "Volver"
+script = ExtResource("2_pcu2j")
+
+[node name="RobotChickenEndTheme" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(351, 263)
+stream = ExtResource("3_yawv5")
+autoplay = true
+
+[connection signal="pressed" from="Volver" to="Volver" method="_on_pressed"]

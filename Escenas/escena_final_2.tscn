@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddw484cc3y3nq"]
+
+[ext_resource type="Script" path="res://Scripts/escena_final_2.gd" id="1_2fuay"]
+[ext_resource type="Texture2D" uid="uid://b30fij585l1vv" path="res://Imagenes/Foto 2.png" id="2_nm0h4"]
+[ext_resource type="AudioStream" uid="uid://c5qbics43sc87" path="res://Sonidos/ROBOT CHICKEN END THEME.mp3" id="3_3fj7i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4b3oq"]
+bg_color = Color(0, 0.564706, 0.0588235, 1)
+
+[node name="Escena final 2" type="CanvasLayer"]
+script = ExtResource("1_2fuay")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 646.0
+texture = ExtResource("2_nm0h4")
+
+[node name="Siguiente" type="Button" parent="."]
+offset_left = 958.0
+offset_top = 578.0
+offset_right = 1139.0
+offset_bottom = 638.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_4b3oq")
+text = "Siguiente"
+
+[node name="RobotChickenEndTheme" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-503, 1313)
+stream = ExtResource("3_3fj7i")
+autoplay = true
+
+[connection signal="pressed" from="Siguiente" to="." method="_on_siguiente_pressed"]
